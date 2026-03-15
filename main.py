@@ -358,7 +358,7 @@ async def chat(audio: UploadFile = File(...)):
                 transcript += f" ({whisper_error[:80]})"
 
         # Call Gemini
-        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
+        gemini_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key={GEMINI_API_KEY}"
         gemini_payload = {
             "system_instruction": {"parts": [{"text": LIBBY_SYSTEM_PROMPT}]},
             "contents": [{"role": "user", "parts": [{"text": transcript}]}]
